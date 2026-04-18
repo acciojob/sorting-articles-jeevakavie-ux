@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset= "UTF-8">
   <title>Sorted Bands</title>
-  <style>
-	  body {
-		font- family: Arial, sans-serif;
-		padding: 20px;
-	  }
-	  li {
-		margin: 5px 0;
-	  }
+  </head>
+  <body>
   </style>
 </head>
 <body>
 
-	<h2>Sorted Band List</h2>
+	<h2>Band List</h2>
 	<u1 id="band"></u1>
 
 	<script>
@@ -42,19 +35,24 @@
 			 }
 
 		     const sortedBands = bands.sort((a, b) => {
-				return strip(a).localcompare(strip(b)); 
+                const bandA = strip(a);
+				const bandB = strip(b);
+
+				 if (bandA > bandB) return 1;
+				 if (bandA < bandB) return -1;
+				 return 0;
+			 
 			 });
 
-		     const u1 = document.getElementById('band');
+		     const bandlist = document.getElementById('band');
 
-		     sortedBands.forEach(band => {
-				 const 1i.textcontent = band;
-				 u1.appendChild(1i);
-			 });
-	</script>
+		     bandlist.innerHTML = sortedBands
+		        .map(band => `<li>${band}</li>`)
+		         .join('');
+	         </script>
 
-</body>
-</html>
+           </body>
+           </html>
 
 		
 		]

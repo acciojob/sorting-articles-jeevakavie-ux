@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset= "UTF-8">
+  <title>Sorted Bands</title>
+  <style>
+	  body {
+		font- family: Arial, sans-serif;
+		padding: 20px;
+	  }
+	  li {
+		margin: 5px 0;
+	  }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+	<h2>Sorted Band List</h2>
+	<u1 id="band"></u1>
+
+	<script>
+		const bands = [
+			'The plot in You',
+			'The Devil Wears prada',
+			'pierce the Veli''
+			'Norma Jean',
+			'The Blead',
+			'Say Anything',
+			'The Midway State',
+			'We Came as Romans',
+			'Counterparts',
+			'Oh, Sleeper',
+			'Oh, Sleeper',
+			'A Skylit Drive',
+			'Anywhere But Here',
+			'An Old Dog',
+		  ];
+
+		  function strip(bandName) {
+			  return bandName.replace(/^(a |an |the )/i, '').trim();
+			 }
+
+		     const sortedBands = bands.sort((a, b) => {
+				return strip(a).localcompare(strip(b)); 
+			 });
+
+		     const u1 = document.getElementById('band');
+
+		     sortedBands.forEach(band => {
+				 const 1i.textcontent = band;
+				 u1.appendChild(1i);
+			 });
+	</script>
 
 </body>
-
 </html>
+
+		
+		]
+	</script>
+	
+	<!-- the entire body must be written by student -->

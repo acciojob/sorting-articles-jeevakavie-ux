@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
   <meta charset= "UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorted Bands</title>
-  </head>
-  <body>
+  <style>
+      body {
+		   font-family: Arial, sans-serif;
+		  padding: 20px;
+	  }
+
+	  ul {
+		  list-style-type: none;
+		  padding: 0;
+	  }
+
+	  li {
+		  padding: 8px;
+		  border-bottom: 1px solid #ccc;
+	  }
   </style>
 </head>
 <body>
 
-	<h2>Band List</h2>
+	<h2>sorted Articles</h2>
+	
 	<u1 id="band"></u1>
 
 	<script>
@@ -35,27 +50,20 @@
 			 }
 
 		     const sortedBands = bands.sort((a, b) => {
-                const bandA = strip(a);
-				const bandB = strip(b);
-
-				 if (bandA > bandB) return 1;
-				 if (bandA < bandB) return -1;
-				 return 0;
-			 
+                 if(strip(a) > strip(b)) {
+					  return 1;
+				 } else {
+					 return -1;
+				 }
+				
 			 });
 
-		     const bandlist = document.getElementById('band');
-
-		     bandlist.innerHTML = sortedBands
-		        .map(band => `<li>${band}</li>`)
-		         .join('');
+		      document.getElementById("band").innerHTML =
+				  sortedBands.map(band => `<li>${band}</li>`).join('');
 	         </script>
 
            </body>
            </html>
 
 		
-		]
-	</script>
 	
-	<!-- the entire body must be written by student -->
